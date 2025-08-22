@@ -20,6 +20,20 @@ const CippCustomVariables = ({ id }) => {
     "tenantfilter",
     "partnertenantid",
     "samappid",
+    "cippuserschema",
+    "cippurl",
+    "defaultdomain",
+    "serial",
+    "systemroot",
+    "systemdrive",
+    "temp",
+    "userprofile",
+    "username",
+    "userdomain",
+    "windir",
+    "programfiles",
+    "programfiles(x86)",
+    "programdata",
   ];
 
   const validateVariableName = (value) => {
@@ -50,7 +64,7 @@ const CippCustomVariables = ({ id }) => {
           label: "Variable Name",
           placeholder: "Enter the key for the custom variable.",
           required: true,
-          validators: validateVariableName,
+          validators: { validate: validateVariableName },
         },
         {
           type: "textField",
@@ -134,7 +148,7 @@ const CippCustomVariables = ({ id }) => {
             label: "Variable Name",
             placeholder: "Enter the name for the custom variable without %.",
             required: true,
-            validators: validateVariableName,
+            validators: { validate: validateVariableName },
           },
           {
             type: "textField",
